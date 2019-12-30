@@ -6,9 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "serverless deploy",
-    "deploy-prod": "serverless deploy --stage prod"
+    "deploy-prod": "serverless deploy --stage prod",
+    "invoke-create": "serverless invoke local -f createConsent --path mocks/createConsent.json --watch",
+    "invoke-publish": "serverless invoke local -f publishConsent --path mocks/publishConsent.json --watch"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.17",
     "@types/node": "^10.12.18",

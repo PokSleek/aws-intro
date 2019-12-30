@@ -1,16 +1,33 @@
-import service from "./src/service";
-import { handler as io } from './src/io';
+import { createConsent, publishConsent } from './src/services';
+import { response, bodyParse } from './src/lib/helpers/event';
 
-export const hello = async (event, _context) => {
+export const createConsentHandler = async (event) => {
+  try {
 
-  const input = io.input(event);
-  console.log('THE EVENT - ', input);
+    const result = await createConsent(event);
 
-  const result = service.hello(event);
-  return io.returnSuccess(result);
+    const error = result;
+    if ( error ) {
+      return response(error.code, error.message)
+    }
+
+    return response(200, result);
+
+  } catch (error) {
+    return response(500, error);
+  }
+
 };
 
-export const goodbye = async (event, _context) => {
-  const result = service.goodbye(event);
-  return io.returnSuccess(result);
+export const publishConsentHandler = async (event) => {
+  try {
+
+    const result = await publishConsent(event);
+
+    return response(200, result);
+
+  } catch (error) {
+    return response(500, error);
+  }
+
 };
