@@ -7,9 +7,20 @@ custom:
   webpack:
     webpackConfig: ./webpack.config.js
     includeModules: true
+  topicArn:
+    Fn::Join:
+      - ''
+      - - 'arn:aws:sns:'
+        - Ref: AWS::Region
+        - ":"
+        - Ref: AWS::AccountId
+        - ":"
+        - Fn::GetAtt:
+            - SNSTopic
+            - TopicName
 
-# Add the serverless-webpack plugin
 plugins:
+  - serverless-pseudo-parameters
   - serverless-webpack
 
 provider:
@@ -31,7 +42,17 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
-      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
+        - dynamodb:DescribeStream
+        - dynamodb:GetRecords
+        - dynamodb:GetShardIterator
+        - dynamodb:ListStreams
+      Resource:
+        - "Fn::GetAtt": [ serviceTableBY, Arn ]
+        - "Fn::GetAtt": [ serviceTableUA, Arn ]
+    - Effect: Allow
+      Action:
+        - SNS:Publish
+      Resource: ${self:custom.topicArn}
 
 
 functions:
@@ -42,13 +63,19 @@ functions:
       - http:
           method: post
           path: create-consent
-  publishConsent:
-    name: global-test-publishConsent
-    handler: handler.publishConsentHandler
+          cors: true
+  propagateConsent:
+    name: global-test-propagateConsent
+    handler: handler.propagateConsentHandler
     events:
-      - http:
-          method: get
-          path: publish-consent
+      - stream:
+          type: dynamodb
+          arn:
+            Fn::GetAtt: [serviceTableBY, StreamArn]
+      - stream:
+          type: dynamodb
+          arn:
+            Fn::GetAtt: [serviceTableUA, StreamArn]
 
 resources:
   Resources:
@@ -64,8 +91,10 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
         TableName: 'country-by-test'
-    serviceTableUS:
+    serviceTableUA:
       Type: AWS::DynamoDB::Table
       Properties:
         AttributeDefinitions:
@@ -77,4 +106,28 @@ resources:
         ProvisionedThroughput:
           ReadCapacityUnits: 1
           WriteCapacityUnits: 1
-        TableName: 'country-us-test'
+        StreamSpecification:
+          StreamViewType: NEW_AND_OLD_IMAGES
+        TableName: 'country-ua-test'
+    SNSTopic:
+      Type: AWS::SNS::Topic
+      Properties:
+        TopicName: 'global-test-publishConsent'
+    SNSSubscriptionBY:
+      Type: AWS::SNS::Subscription
+      Properties:
+        FilterPolicy:
+          countryCody:
+            - 'BY'
+        Endpoint: koks4oks@gmail.com
+        Protocol: email
+        TopicArn: {"Ref": "SNSTopic"}
+    SNSSubscriptionUA:
+      Type: AWS::SNS::Subscription
+      Properties:
+        FilterPolicy:
+          countryCody:
+            - 'UA'
+        Endpoint: oks4koks@gmail.com
+        Protocol: email
+        TopicArn: {"Ref": "SNSTopic"}

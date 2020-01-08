@@ -24,8 +24,8 @@ const configureDB = ({ TableName, region }) => {
                 Item: data,
             };
 
-            const res = await db.put(params).promise();
-            return res;
+            await db.put(params).promise();
+            return data;
         }
     });
 };

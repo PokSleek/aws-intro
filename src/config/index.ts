@@ -10,5 +10,8 @@ export default {
             countryCode: 'BY',
             TableName: 'country-by-test',
         },
+    },
+    SNS: {
+        topicName: 'global-test-publishConsent',
     }
 };

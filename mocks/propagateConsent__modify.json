@@ -1,0 +1,57 @@
+{
+  "Records": [
+    {
+      "eventID": "82329eb96af9a578ac86583df570712b",
+      "eventName": "MODIFY",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "us-east-2",
+      "dynamodb": {
+        "ApproximateCreationDateTime": 1578479773,
+        "Keys": {
+          "uuid": {
+            "S": "4d32980d7-638dd7d-4wf7-5d6edda960912"
+          }
+        },
+        "NewImage": {
+          "createdAt": {
+            "N": "1578479773511"
+          },
+          "countryCody": {
+            "S": "UA"
+          },
+          "channelType": {
+            "S": "SMSS"
+          },
+          "channelValue": {
+            "S": "+375251234567"
+          },
+          "uuid": {
+            "S": "4d32980d7-638dd7d-4wf7-5d6edda960912"
+          }
+        },
+        "OldImage": {
+          "createdAt": {
+            "N": "1578479669692"
+          },
+          "countryCody": {
+            "S": "UA"
+          },
+          "channelType": {
+            "S": "SMS"
+          },
+          "channelValue": {
+            "S": "+375251234567"
+          },
+          "uuid": {
+            "S": "4d32980d7-638dd7d-4wf7-5d6edda960912"
+          }
+        },
+        "SequenceNumber": "18657000000000000703364189",
+        "SizeBytes": 259,
+        "StreamViewType": "NEW_AND_OLD_IMAGES"
+      },
+      "eventSourceARN": "arn:aws:dynamodb:us-east-2:364328573988:table/country-ua-test/stream/2020-01-04T09:43:21.679"
+    }
+  ]
+}

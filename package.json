@@ -8,10 +8,14 @@
     "deploy": "serverless deploy",
     "deploy-prod": "serverless deploy --stage prod",
     "invoke-create": "serverless invoke local -f createConsent --path mocks/createConsent.json --watch",
+    "invoke-prop-insert": "serverless invoke local -f propagateConsent --path mocks/propagateConsent__insert.json --watch",
+    "invoke-prop-modify": "serverless invoke local -f propagateConsent --path mocks/propagateConsent__modify.json --watch",
     "invoke-publish": "serverless invoke local -f publishConsent --path mocks/publishConsent.json --watch"
   },
   "dependencies": {
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "serverless": "^1.60.5",
+    "serverless-pseudo-parameters": "^2.5.0"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.17",
