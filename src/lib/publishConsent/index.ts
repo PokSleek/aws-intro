@@ -2,11 +2,14 @@ import { SNS } from 'aws-sdk';
 
 const sns = new SNS();
 
-export const publishConsent = async (topicArn, eventName, consent, data) =>
-    await sns.publish({
-        Message: `Consent with given data was subscribed \r ${JSON.stringify(consent)} \r Context \r ${data}`,
+export const publishConsent = async (topicName, eventName, consent) => {
+
+    const { TopicArn } = await sns.createTopic({ Name: topicName }).promise();
+
+    return await sns.publish({
+        Message: `Consent with given data was subscribed \r ${JSON.stringify(consent)}`,
         Subject: `${consent.countryCody} publishing -- ${eventName}`,
-        TopicArn: topicArn,
+        TopicArn,
         MessageAttributes: {
             'countryCody': {
                 DataType: 'String',
@@ -14,4 +17,4 @@ export const publishConsent = async (topicArn, eventName, consent, data) =>
             }
         },
     }).promise();
-
+};
