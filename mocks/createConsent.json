@@ -3,6 +3,6 @@
     "uuid": "4d32980d7-638dd7d-4zf7-5f6eda960912",
     "channelType": "SMS",
     "channelValue": "+375251234567",
-    "countryCody": "UA"
+    "countryCode": "UA"
   }
 }

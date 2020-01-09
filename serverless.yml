@@ -117,7 +117,7 @@ resources:
       Type: AWS::SNS::Subscription
       Properties:
         FilterPolicy:
-          countryCody:
+          countryCode:
             - 'BY'
         Endpoint: koks4oks@gmail.com
         Protocol: email
@@ -126,7 +126,7 @@ resources:
       Type: AWS::SNS::Subscription
       Properties:
         FilterPolicy:
-          countryCody:
+          countryCode:
             - 'UA'
         Endpoint: oks4koks@gmail.com
         Protocol: email

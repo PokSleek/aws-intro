@@ -17,7 +17,7 @@
           "createdAt": {
             "N": "1578479773511"
           },
-          "countryCody": {
+          "countryCode": {
             "S": "UA"
           },
           "channelType": {
