@@ -1,12 +1,12 @@
 import { DynamoDB } from 'aws-sdk';
-
 import { DynamoDBStreamEvent } from 'aws-lambda';
+
 import { ConsentEvent} from './src/interfaces';
 
 import { createConsent, publishConsent } from './src/lib';
 import { response } from './src/lib/helpers/event';
 
-import config from  './src/config';
+import config from './src/config';
 
 export const createConsentHandler = async (event: ConsentEvent): Promise<any> => {
   try {

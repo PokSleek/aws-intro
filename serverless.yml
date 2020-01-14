@@ -52,8 +52,8 @@ provider:
     - Effect: Allow
       Action:
         - SNS:Publish
+        - SNS:CreateTopic
       Resource: ${self:custom.topicArn}
-
 
 functions:
   createConsent:

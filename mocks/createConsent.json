@@ -2,7 +2,7 @@
   "consent": {
     "uuid": "4d32980d7-638dd7d-4zf7-5f6eda960912",
     "channelType": "SMS",
-    "channelValue": "+375251234567",
-    "countryCode": "UA"
+    "channelValue": "+3751234567",
+    "countryCode": "BY"
   }
 }
