@@ -1,35 +1,57 @@
-const http = require('https');
+const path = require('path');
 const fs = require('fs');
 const parse = require('csv-parse');
+const request = require('request');
+const chunk = require('lodash/chunk');
+const filter = require('lodash/filter');
 // import async from 'async'
-const { DynamoDB } = require('aws-sdk');
 
-const csv_filename = './initial_data.csv';
+const csv_filename = 'initial_data.csv';
 
 const url = 'https://kzgrsdolz5.execute-api.us-east-2.amazonaws.com/dev/create-consent';
 const rs = fs.createReadStream(csv_filename);
-const db = new DynamoDB({ region: "eu-west-2" });
 
-const output = [];
+const output = {};
 
 const parser = parse({
     delimiter: '|'
 });
 
 parser.on('data', (data) => {
-   const consent = {
-        consent: {
-            uuid: data[0],
-            channelType: data[1],
-            channelValue: data[2],
-            countryCode: data[3]
-        }
+    const countryCode = data[3];
+    const consent = {
+        uuid: data[0],
+        channelType: data[1],
+        channelValue: data[2],
+        countryCode
     };
-    output.push(consent);
+
+    output[countryCode] ?
+        output[countryCode].push(consent) :
+        output[countryCode] = [consent];
 });
 
 parser.on('end',async () => {
-   console.log(JSON.parse(output));
+    const UA = {consents: [output.UA[0]]};
+    const BY = {consents: [output.BY[0]]};
+
+   //  request.post(url,
+   //      {
+   //          json: UA,
+   //      },
+   //     (err, res, body) => {
+   //         console.log(err, body);
+   //     }
+   // );
+
+    await request.post(url,
+        {
+            json: UA,
+        },
+        (err, res, body) => {
+            console.log(err, body);
+        }
+    );
 });
 
 //

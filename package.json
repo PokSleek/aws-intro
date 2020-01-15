@@ -7,20 +7,22 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "serverless deploy",
     "deploy-prod": "serverless deploy --stage prod",
+    "load-script": "node src/scripts/upload_data.js",
     "invoke-create": "serverless invoke local -f createConsent --path mocks/createConsent.json --watch",
-    "invoke-prop-insert": "serverless invoke local -f propagateConsent --path mocks/propagateConsent__insert.json --watch",
+    "invoke-load": "serverless invoke local -f createConsent --path mocks/loadConsents.json --watch",
     "invoke-prop-modify": "serverless invoke local -f propagateConsent --path mocks/propagateConsent__modify.json --watch",
     "invoke-publish": "serverless invoke local -f publishConsent --path mocks/publishConsent.json --watch"
   },
   "dependencies": {
     "lodash": "^4.17.15",
+    "request": "^2.88.0",
+    "async": "^3.1.0",
     "serverless": "^1.60.5",
     "serverless-pseudo-parameters": "^2.5.0"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.17",
     "@types/node": "^10.12.18",
-    "async": "^3.1.0",
     "aws-sdk": "^2.596.0",
     "csv-parse": "^4.8.3",
     "fork-ts-checker-webpack-plugin": "^3.0.1",

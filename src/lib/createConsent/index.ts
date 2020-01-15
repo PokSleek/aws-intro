@@ -4,7 +4,6 @@ import { dbSwitcher } from '../../services/db/utils';
 
 export const createConsent = async (consent: Consent) => {
     const { uuid, channelType, channelValue, countryCode } = consent;
-
     const db = dbSwitcher(countryCode);
 
     if (db) {
@@ -18,4 +17,5 @@ export const createConsent = async (consent: Consent) => {
 
         return ({ item });
     }
+    throw new Error('Bad country code');
 };

@@ -1,18 +1,23 @@
 import { DynamoDB } from 'aws-sdk';
 import { DynamoDBStreamEvent } from 'aws-lambda';
 
-import { ConsentEvent} from './src/interfaces';
-
-import { createConsent, publishConsent } from './src/lib';
-import { response } from './src/lib/helpers/event';
+import { createConsent, publishConsent, loadConsents } from './src/lib';
+import { getBody, response } from './src/lib/helpers/event';
 
 import config from './src/config';
 
-export const createConsentHandler = async (event: ConsentEvent): Promise<any> => {
+export const createConsentHandler = async (event): Promise<any> => {
   try {
-    const { consent } = event;
-    const result = await createConsent(consent);
+    const body = getBody(event);
+    const isLoading = !body.consent;
 
+    let result;
+    if (isLoading) {
+      console.log(body);
+      result = await loadConsents(body.consents, body.consents[0].countryCode);
+    } else {
+      result = await createConsent(body.consent);
+    }
     return response(200, result);
 
   } catch (error) {
@@ -27,7 +32,7 @@ export const propagateConsentHandler = async (dbEvent: DynamoDBStreamEvent): Pro
 
     const consent = DynamoDB.Converter.unmarshall(NewImage);
 
-    const result = await publishConsent(topicName, eventName, consent);
+    const result = await publishConsent(topicName, eventName, consent, dbEvent);
 
     return response(200, result);
 

@@ -1,0 +1,318 @@
+{
+  "body": {
+    "consents": [
+      {
+        "uuid": "b10d78e2d-da03-44ed-aa6e-a4cdb3bcb12cn",
+        "channelType": "PLC",
+        "channelValue": "+375765889435",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "72d4aca7d-130d-44fc-aa93-f4e844f2b04dn",
+        "channelType": "PHC",
+        "channelValue": "+375766728347",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "ebdc25d0d-9d48-42c9-9120-5e31b15046f1n",
+        "channelType": "AE",
+        "channelValue": "gzcA2test@test.com",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "8516aad7d-d61f-4d71-9f5b-bfb5319122b0n",
+        "channelType": "PLC",
+        "channelValue": "+375477179748",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "87ba4849d-2983-4e7a-973b-c73e663be7a5n",
+        "channelType": "PLC",
+        "channelValue": "+375901601318",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "b10d78e2d-da03-44ed-aa6e-a4cdb3bcb12cb",
+        "channelType": "PLC",
+        "channelValue": "+375765889435",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "72d4aca7d-130d-44fc-aa93-f4e844f2b04db",
+        "channelType": "PHC",
+        "channelValue": "+375766728347",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "ebdc25d0d-9d48-42c9-9120-5e31b15046f1b",
+        "channelType": "AE",
+        "channelValue": "gzcA2test@test.com",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "8516aad7d-d61f-4d71-9f5b-bfb5319122b0b",
+        "channelType": "PLC",
+        "channelValue": "+375477179748",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "87ba4849d-2983-4e7a-973b-c73e663be7a5b",
+        "channelType": "PLC",
+        "channelValue": "+375901601318",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "b10d78e2d-da03-44ed-aa6e-a4cdb3bcb12cv",
+        "channelType": "PLC",
+        "channelValue": "+375765889435",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "72d4aca7d-130d-44fc-aa93-f4e844f2b04dv",
+        "channelType": "PHC",
+        "channelValue": "+375766728347",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "ebdc25d0d-9d48-42c9-9120-5e31b15046f1v",
+        "channelType": "AE",
+        "channelValue": "gzcA2test@test.com",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "8516aad7d-d61f-4d71-9f5b-bfb5319122b0v",
+        "channelType": "PLC",
+        "channelValue": "+375477179748",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "87ba4849d-2983-4e7a-973b-c73e663be7a5v",
+        "channelType": "PLC",
+        "channelValue": "+375901601318",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "b10d78e2d-da03-44ed-aa6e-a4cdb3bcb12cc",
+        "channelType": "PLC",
+        "channelValue": "+375765889435",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "72d4aca7d-130d-44fc-aa93-f4e844f2b04dc",
+        "channelType": "PHC",
+        "channelValue": "+375766728347",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "ebdc25d0d-9d48-42c9-9120-5e31b15046f1c",
+        "channelType": "AE",
+        "channelValue": "gzcA2test@test.com",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "8516aad7d-d61f-4d71-9f5b-bfb5319122b0c",
+        "channelType": "PLC",
+        "channelValue": "+375477179748",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "87ba4849d-2983-4e7a-973b-c73e663be7a5c",
+        "channelType": "PLC",
+        "channelValue": "+375901601318",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "b10d78e2d-da03-44ed-aa6e-a4cdb3bcb12cx",
+        "channelType": "PLC",
+        "channelValue": "+375765889435",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "72d4aca7d-130d-44fc-aa93-f4e844f2b04dx",
+        "channelType": "PHC",
+        "channelValue": "+375766728347",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "ebdc25d0d-9d48-42c9-9120-5e31b15046f1x",
+        "channelType": "AE",
+        "channelValue": "gzcA2test@test.com",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "b1qqq0d78e2d-da03-44ed-aa6e-a4cdb3bcb12cx",
+        "channelType": "PLC",
+        "channelValue": "+375765889435",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "72dss4aca7d-130d-44fc-aa93-f4e844f2b04dx",
+        "channelType": "PHC",
+        "channelValue": "+375766728347",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "ebdddc25d0d-9d48-42c9-9120-5e31b15046f1x",
+        "channelType": "AE",
+        "channelValue": "gzcA2test@test.com",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "b10d78e2d-da03-44ed-aa6e-a4cdb3bcb12cn",
+        "channelType": "PLC",
+        "channelValue": "+375765889435",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "72d4aca7d-130d-44fc-aa93-f4e844f2b04dn",
+        "channelType": "PHC",
+        "channelValue": "+375766728347",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "ebdc25d0d-9d48-42c9-9120-5e31b15046f1n",
+        "channelType": "AE",
+        "channelValue": "gzcA2test@test.com",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "8516aad7d-d61f-4d71-9f5b-bfb5319122b0n",
+        "channelType": "PLC",
+        "channelValue": "+375477179748",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "87ba4849d-2983-4e7a-973b-c73e663be7a5n",
+        "channelType": "PLC",
+        "channelValue": "+375901601318",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "b10d78e2d-da03-44ed-aa6e-a4cdb3bcb12cb",
+        "channelType": "PLC",
+        "channelValue": "+375765889435",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "72d4aca7d-130d-44fc-aa93-f4e844f2b04db",
+        "channelType": "PHC",
+        "channelValue": "+375766728347",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "ebdc25d0d-9d48-42c9-9120-5e31b15046f1b",
+        "channelType": "AE",
+        "channelValue": "gzcA2test@test.com",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "8516aad7d-d61f-4d71-9f5b-bfb5319122b0b",
+        "channelType": "PLC",
+        "channelValue": "+375477179748",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "87ba4849d-2983-4e7a-973b-c73e663be7a5b",
+        "channelType": "PLC",
+        "channelValue": "+375901601318",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "b10d78e2d-da03-44ed-aa6e-a4cdb3bcb12cv",
+        "channelType": "PLC",
+        "channelValue": "+375765889435",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "72d4aca7d-130d-44fc-aa93-f4e844f2b04dv",
+        "channelType": "PHC",
+        "channelValue": "+375766728347",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "ebdc25d0d-9d48-42c9-9120-5e31b15046f1v",
+        "channelType": "AE",
+        "channelValue": "gzcA2test@test.com",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "8516aad7d-d61f-4d71-9f5b-bfb5319122b0v",
+        "channelType": "PLC",
+        "channelValue": "+375477179748",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "87ba4849d-2983-4e7a-973b-c73e663be7a5v",
+        "channelType": "PLC",
+        "channelValue": "+375901601318",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "b10d78e2d-da03-44ed-aa6e-a4cdb3bcb12cc",
+        "channelType": "PLC",
+        "channelValue": "+375765889435",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "72d4aca7d-130d-44fc-aa93-f4e844f2b04dc",
+        "channelType": "PHC",
+        "channelValue": "+375766728347",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "ebdc25d0d-9d48-42c9-9120-5e31b15046f1c",
+        "channelType": "AE",
+        "channelValue": "gzcA2test@test.com",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "8516aad7d-d61f-4d71-9f5b-bfb5319122b0c",
+        "channelType": "PLC",
+        "channelValue": "+375477179748",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "87ba4849d-2983-4e7a-973b-c73e663be7a5c",
+        "channelType": "PLC",
+        "channelValue": "+375901601318",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "b10d78e2d-da03-44ed-aa6e-a4cdb3bcb12cx",
+        "channelType": "PLC",
+        "channelValue": "+375765889435",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "72d4aca7d-130d-44fc-aa93-f4e844f2b04dx",
+        "channelType": "PHC",
+        "channelValue": "+375766728347",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "ebdc25d0d-9d48-42c9-9120-5e31b15046f1x",
+        "channelType": "AE",
+        "channelValue": "gzcA2test@test.com",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "b1qqq0d78e2d-da03-44ed-aa6e-a4cdb3bcb12cx",
+        "channelType": "PLC",
+        "channelValue": "+375765889435",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "72dss4aca7d-130d-44fc-aa93-f4e844f2b04dx",
+        "channelType": "PHC",
+        "channelValue": "+375766728347",
+        "countryCode": "BY"
+      },
+      {
+        "uuid": "ebdddc25d0d-9d48-42c9-9120-5e31b15046f1x",
+        "channelType": "AE",
+        "channelValue": "gzcA2test@test.com",
+        "countryCode": "BY"
+      }
+    ]
+  }
+}

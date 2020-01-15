@@ -46,6 +46,7 @@ provider:
         - dynamodb:GetRecords
         - dynamodb:GetShardIterator
         - dynamodb:ListStreams
+        - dynamodb:BatchWriteItem
       Resource:
         - "Fn::GetAtt": [ serviceTableBY, Arn ]
         - "Fn::GetAtt": [ serviceTableUA, Arn ]
@@ -63,7 +64,6 @@ functions:
       - http:
           method: post
           path: create-consent
-          cors: true
   propagateConsent:
     name: global-test-propagateConsent
     handler: handler.propagateConsentHandler
