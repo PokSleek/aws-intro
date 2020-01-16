@@ -89,8 +89,8 @@ resources:
           - AttributeName: uuid
             KeyType: HASH
         ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
+          ReadCapacityUnits: 10
+          WriteCapacityUnits: 10
         StreamSpecification:
           StreamViewType: NEW_AND_OLD_IMAGES
         TableName: 'country-by-test'
@@ -104,8 +104,8 @@ resources:
           - AttributeName: uuid
             KeyType: HASH
         ProvisionedThroughput:
-          ReadCapacityUnits: 1
-          WriteCapacityUnits: 1
+          ReadCapacityUnits: 10
+          WriteCapacityUnits: 10
         StreamSpecification:
           StreamViewType: NEW_AND_OLD_IMAGES
         TableName: 'country-ua-test'

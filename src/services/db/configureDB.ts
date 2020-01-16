@@ -1,5 +1,4 @@
 import { DynamoDB } from 'aws-sdk';
-import async from 'async';
 import chunk from 'lodash/chunk';
 
 const configureDB = ({ TableName, region }) => {
@@ -32,21 +31,37 @@ const configureDB = ({ TableName, region }) => {
 
         load: async data => {
             const chunks = chunk(data, 25);
+            let itemCount = 0;
 
-            await async.each(chunks, async (arr, cb) => {
-                console.log('bla');
-                const params = {
-                    RequestItems: {
-                        [TableName]: arr.map((consent) => ({
-                            PutRequest: {
-                                Item: consent
-                            }
-                        }))
-                    }
-                };
-                console.log('bla2');
-                return db.batchWrite(params, () => cb());
+            await chunks.reduce((acc, chunk) => {
+                return acc.then(() => {
+                    console.log('promise');
+                    const params = {
+                        RequestItems: {
+                            [TableName]: chunk.map((consent) => ({
+                                PutRequest: {
+                                    Item: consent
+                                }
+                            }))
+                        }
+                    };
+                    console.log('params', JSON.stringify(params));
+
+                    return new Promise((resolve) => {
+                        db.batchWrite(params, (err, data) => {
+                            console.log('error', err);
+                            console.log('data', data);
+                            itemCount = itemCount + chunk.length;
+                            resolve();
+                        });
+                    });
+                });
+            }, Promise.resolve());
+
+            return ({
+                itemCount
             });
+
             // for (const chunk of chunks) {
             //     console.log(chunk);
             //     const params = {
@@ -62,9 +77,9 @@ const configureDB = ({ TableName, region }) => {
             //
             //     await db.batchWrite(params).promise();
             // }
-            return ({
-                itemsCount: data.length
-            });
+            // return ({
+            //     counterChunks
+            // });
         }
     });
 };

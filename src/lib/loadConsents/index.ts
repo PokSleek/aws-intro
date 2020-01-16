@@ -7,5 +7,5 @@ export const loadConsents = async (consents, countryCode) => {
         return item;
     });
     const db = dbSwitcher(countryCode);
-    return db.load(updatedConsents);
+    return await db.load(updatedConsents);
 };
