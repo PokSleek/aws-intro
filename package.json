@@ -14,7 +14,7 @@
     "invoke-publish": "serverless invoke local -f publishConsent --path mocks/publishConsent.json --watch"
   },
   "dependencies": {
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "request": "^2.88.0",
     "async": "^3.1.0",
     "serverless": "^1.60.5",
