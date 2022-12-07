@@ -17,7 +17,7 @@
     "lodash": "^4.17.15",
     "request": "^2.88.0",
     "async": "^3.1.0",
-    "serverless": "^1.60.5",
+    "serverless": "^3.25.1",
     "serverless-pseudo-parameters": "^2.5.0"
   },
   "devDependencies": {
